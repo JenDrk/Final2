@@ -1,5 +1,6 @@
 #pragma once
 #include "Shapes.h"
+using namespace std;
 class Circle: public Shapes
 {
 private:
@@ -9,6 +10,16 @@ protected:
 public:
 	Circle(int x, int y, double Nradius, std::string name);
 	~Circle();
+
+	void print(ostream & out) 
+	{
+		Draw();
+	}
+	friend ostream & operator << (ostream &out, Circle c)
+	{
+		c.print(out);
+		return out;
+	}
 
 	double GetArea() { return PI * radius * radius; }
 	void Draw();
