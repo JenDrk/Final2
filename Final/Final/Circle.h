@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Shapes.h"
 class Circle: public Shapes
 {
 private:
